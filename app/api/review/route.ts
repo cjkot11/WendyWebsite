@@ -28,14 +28,14 @@ export async function POST(request: Request) {
       name,
       rating,
       text,
-      photoUrl: photoUrl || null,
+      photourl: photoUrl || null,
       approved: false, // Reviews need admin approval
     });
 
     if (error) {
       console.error("Database error:", error);
       return NextResponse.json(
-        { error: "Failed to submit review" },
+        { error: "Failed to submit review", details: error.message },
         { status: 500 }
       );
     }
