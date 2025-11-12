@@ -9,7 +9,7 @@ const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KE
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, phone, tripType, message } = body;
+    const { name, email, phone, tripType, message, travelers, budgetRange } = body;
 
     if (!name || !email) {
       return NextResponse.json(
@@ -25,6 +25,8 @@ export async function POST(request: Request) {
       email,
       phone: phone || null,
       triptype: tripType || "General Inquiry", // PostgreSQL converts to lowercase
+      travelers: travelers || null,
+      budgetrange: budgetRange || null,
       message: message || null,
     });
 

@@ -11,7 +11,7 @@ export async function GET() {
       .from("reviews")
       .select("*")
       .eq("approved", true)
-      .order("createdAt", { ascending: false });
+      .order("createdat", { ascending: false });
 
     if (error) {
       console.error("Database error:", error);
