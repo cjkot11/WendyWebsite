@@ -31,7 +31,7 @@ export async function POST(request: Request) {
     if (dbError) {
       console.error("Database error:", dbError);
       return NextResponse.json(
-        { error: "Failed to save lead" },
+        { error: "Failed to save lead", details: dbError.message },
         { status: 500 }
       );
     }

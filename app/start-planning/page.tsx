@@ -50,7 +50,7 @@ export default function StartPlanning() {
         setTimeout(() => router.push("/thank-you"), 2000);
       } else {
         console.error("Form submission error:", data);
-        alert(`Error: ${data.error || "Failed to submit form. Please try again."}`);
+        alert(`Error: ${data.error || "Failed to submit form. Please try again."}${data.details ? `\n\nDetails: ${data.details}` : ""}`);
       }
     } catch (error) {
       console.error("Network error:", error);
