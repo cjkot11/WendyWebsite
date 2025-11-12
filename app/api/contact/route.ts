@@ -38,14 +38,36 @@ export async function POST(request: Request) {
 
     if (resend) {
       try {
+        // Send notification to admin
         await resend.emails.send({
-          from: "Wendy Travel <notifications@wendytravel.com>",
+          from: "Wendy's Travel <onboarding@resend.dev>",
           to: process.env.ADMIN_EMAIL || "wendy@wendytravel.com",
           subject: `New Lead from ${name}`,
-          html: `<h2>New Lead Submitted</h2><p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p>`,
+          html: `
+            <h2>New Lead Submitted</h2>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ""}
+            ${tripType ? `<p><strong>Trip Type:</strong> ${tripType}</p>` : ""}
+            ${message ? `<p><strong>Message:</strong> ${message}</p>` : ""}
+          `,
+        });
+
+        // Send confirmation to client
+        await resend.emails.send({
+          from: "Wendy's Travel <onboarding@resend.dev>",
+          to: email,
+          subject: "Thank you for contacting Wendy's Travel!",
+          html: `
+            <h2>Thank you, ${name}!</h2>
+            <p>We've received your inquiry and will get back to you within 24 hours.</p>
+            <p>We're excited to help you plan your dream vacation!</p>
+            <p>Best regards,<br>Wendy</p>
+          `,
         });
       } catch (emailError) {
         console.error("Email error:", emailError);
+        // Continue even if email fails
       }
     }
 
