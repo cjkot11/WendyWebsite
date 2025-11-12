@@ -24,7 +24,7 @@ export async function POST(request: Request) {
       name,
       email,
       phone: phone || null,
-      tripType: tripType || "General Inquiry",
+      triptype: tripType || "General Inquiry", // PostgreSQL converts to lowercase
       message: message || null,
     });
 
