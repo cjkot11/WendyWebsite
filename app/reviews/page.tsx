@@ -37,17 +37,37 @@ export default function Reviews() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    const response = await fetch("/api/review", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...formData, rating }),
-    });
-    if (response.ok) {
-      setSubmitStatus("success");
-      setFormData({ name: "", text: "" });
-      setRating(5);
+    setSubmitStatus("idle");
+
+    try {
+      const response = await fetch("/api/review", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, rating }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        setFormData({ name: "", text: "" });
+        setRating(5);
+        // Refresh reviews list
+        const res = await fetch("/api/reviews");
+        if (res.ok) {
+          const reviewsData = await res.json();
+          setReviews(reviewsData);
+        }
+      } else {
+        console.error("Review submission error:", data);
+        alert(`Error: ${data.error || "Failed to submit review. Please try again."}`);
+      }
+    } catch (error) {
+      console.error("Network error:", error);
+      alert("Network error. Please check your connection and try again.");
+    } finally {
+      setIsSubmitting(false);
     }
-    setIsSubmitting(false);
   };
 
   return (

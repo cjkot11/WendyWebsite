@@ -25,6 +25,7 @@ export default function CustomTrips() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus("idle");
 
     try {
       const response = await fetch("/api/contact", {
@@ -32,6 +33,8 @@ export default function CustomTrips() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
+
+      const data = await response.json();
 
       if (response.ok) {
         setSubmitStatus("success");
@@ -46,7 +49,13 @@ export default function CustomTrips() {
           travelDates: "",
           specialRequests: "",
         });
+      } else {
+        console.error("Form submission error:", data);
+        alert(`Error: ${data.error || "Failed to submit form. Please try again."}`);
       }
+    } catch (error) {
+      console.error("Network error:", error);
+      alert("Network error. Please check your connection and try again.");
     } finally {
       setIsSubmitting(false);
     }

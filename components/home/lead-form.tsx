@@ -29,13 +29,17 @@ export function LeadForm() {
         body: JSON.stringify(formData),
       });
 
+      const data = await response.json();
+
       if (response.ok) {
         setSubmitStatus("success");
         setFormData({ name: "", email: "", phone: "", tripType: "", message: "" });
       } else {
+        console.error("Form submission error:", data);
         setSubmitStatus("error");
       }
     } catch (error) {
+      console.error("Network error:", error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
