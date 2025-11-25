@@ -1,19 +1,27 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Star } from "lucide-react";
+import { createClient } from "@/lib/supabase/server";
 
 async function getReviews() {
-  // This will fetch from Supabase API
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/api/reviews`, {
-      cache: 'no-store'
-    });
-    if (res.ok) {
-      return await res.json();
+    const supabase = await createClient();
+    const { data, error } = await supabase
+      .from("reviews")
+      .select("*")
+      .eq("approved", true)
+      .order("createdat", { ascending: false })
+      .limit(3);
+    
+    if (error) {
+      console.error('Error fetching reviews:', error);
+      return [];
     }
+    
+    return data || [];
   } catch (error) {
     console.error('Error fetching reviews:', error);
+    return [];
   }
-  return [];
 }
 
 export async function Testimonials() {
