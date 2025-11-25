@@ -24,9 +24,18 @@ export async function GET() {
       .eq("email", user.email)
       .single();
 
-    if (userError || !userData || userData.role !== "admin") {
+    if (userError) {
+      console.error("User lookup error:", userError);
       return NextResponse.json(
-        { error: "Forbidden - Admin access required" },
+        { error: "Forbidden - Admin access required", details: `User lookup failed: ${userError.message}. Make sure your email exists in the users table with role='admin'` },
+        { status: 403 }
+      );
+    }
+
+    if (!userData || userData.role !== "admin") {
+      console.error("User data:", userData, "User email:", user.email);
+      return NextResponse.json(
+        { error: "Forbidden - Admin access required", details: `User found but role is '${userData?.role || 'not found'}'. Expected 'admin'.` },
         { status: 403 }
       );
     }
