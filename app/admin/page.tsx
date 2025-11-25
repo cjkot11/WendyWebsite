@@ -85,10 +85,19 @@ export default function AdminDashboard() {
   };
 
   const fetchReviews = async () => {
-    const res = await fetch("/api/admin/reviews");
-    if (res.ok) {
-      const data = await res.json();
-      setReviews(data);
+    try {
+      const res = await fetch("/api/admin/reviews");
+      if (res.ok) {
+        const data = await res.json();
+        setReviews(data);
+      } else {
+        const error = await res.json();
+        console.error("Failed to fetch reviews:", error);
+        alert(`Error loading reviews: ${error.error || "Unknown error"}`);
+      }
+    } catch (error) {
+      console.error("Error fetching reviews:", error);
+      alert("Failed to load reviews. Check console for details.");
     }
   };
 
