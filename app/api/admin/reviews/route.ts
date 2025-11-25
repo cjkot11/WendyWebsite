@@ -11,18 +11,23 @@ export async function GET() {
     const { data: { user }, error: authError } = await supabase.auth.getUser();
     
     if (authError || !user) {
+      console.error("Auth error:", authError, "User:", user);
       return NextResponse.json(
-        { error: "Unauthorized" },
+        { error: "Unauthorized", details: authError?.message || "No user found" },
         { status: 401 }
       );
     }
 
-    // Check if user is admin
+    console.log("Authenticated user email:", user.email);
+
+    // Check if user is admin - try querying with exact email match
     const { data: userData, error: userError } = await supabase
       .from("users")
-      .select("role")
-      .eq("email", user.email)
-      .single();
+      .select("role, email")
+      .eq("email", user.email?.toLowerCase().trim())
+      .maybeSingle();
+
+    console.log("User query result:", { userData, userError, queryEmail: user.email?.toLowerCase().trim() });
 
     if (userError) {
       console.error("User lookup error:", userError);
@@ -32,10 +37,18 @@ export async function GET() {
       );
     }
 
-    if (!userData || userData.role !== "admin") {
+    if (!userData) {
+      console.error("No user data found for email:", user.email);
+      return NextResponse.json(
+        { error: "Forbidden - Admin access required", details: `No user found in database with email: ${user.email}. Please add your user to the users table with role='admin'` },
+        { status: 403 }
+      );
+    }
+
+    if (userData.role !== "admin") {
       console.error("User data:", userData, "User email:", user.email);
       return NextResponse.json(
-        { error: "Forbidden - Admin access required", details: `User found but role is '${userData?.role || 'not found'}'. Expected 'admin'.` },
+        { error: "Forbidden - Admin access required", details: `User found but role is '${userData.role}'. Expected 'admin'.` },
         { status: 403 }
       );
     }
