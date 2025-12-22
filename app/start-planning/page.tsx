@@ -93,17 +93,35 @@ export default function StartPlanning() {
               </CardContent>
             </Card>
 
-            {/* Calendly placeholder */}
+            {/* Calendly embed */}
             <Card className="mt-6">
               <CardHeader>
                 <CardTitle>Schedule a Consultation</CardTitle>
+                <CardDescription>
+                  Pick a time that works best for you. This calendar is powered by Calendly.
+                </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="aspect-video bg-muted flex items-center justify-center rounded-md">
-                  <p className="text-muted-foreground text-center px-4">
-                    Calendly widget would be embedded here
-                  </p>
-                </div>
+                {process.env.NEXT_PUBLIC_CALENDLY_URL ? (
+                  <div className="w-full rounded-md border bg-muted/30">
+                    <iframe
+                      src={process.env.NEXT_PUBLIC_CALENDLY_URL}
+                      className="w-full h-[480px] border-0 rounded-md"
+                      title="Schedule with Wendy"
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                    />
+                  </div>
+                ) : (
+                  <div className="aspect-video bg-muted flex items-center justify-center rounded-md">
+                    <p className="text-muted-foreground text-center px-4 text-sm">
+                      Calendly isn&apos;t configured yet. Add
+                      <br />
+                      <code className="bg-muted px-1 py-0.5 rounded mx-1">NEXT_PUBLIC_CALENDLY_URL</code>
+                      in your environment variables to embed your scheduling link here.
+                    </p>
+                  </div>
+                )}
               </CardContent>
             </Card>
           </div>
