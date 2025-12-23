@@ -8,6 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 
 export const dynamic = 'force-dynamic';
+export const revalidate = 0; // Never cache this page
 
 interface BlogPost {
   _id: string;
