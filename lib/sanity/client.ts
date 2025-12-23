@@ -1,9 +1,9 @@
 import { createClient } from "@sanity/client";
 
 export const sanityClient = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
-  useCdn: false,
+  projectId: "798nmkhx",
+  dataset: "production",
+  useCdn: true, // Enable CDN for public reads
   apiVersion: "2024-05-22",
-  token: process.env.SANITY_API_TOKEN,
+  // No token needed for public reads
 });
