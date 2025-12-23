@@ -22,12 +22,7 @@ interface BlogPost {
 
 async function getPosts(): Promise<BlogPost[]> {
   try {
-    // First, let's check if we can fetch any posts at all
-    const allPosts = await sanityClient.fetch(`*[_type == "post"]`);
-    console.log("All posts from Sanity:", JSON.stringify(allPosts, null, 2));
-    
     const posts = await sanityClient.fetch<BlogPost[]>(postsQuery);
-    console.log("Filtered posts:", JSON.stringify(posts, null, 2));
     return posts || [];
   } catch (error) {
     console.error("Error fetching posts:", error);

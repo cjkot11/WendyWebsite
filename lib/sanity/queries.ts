@@ -1,5 +1,5 @@
 // GROQ queries for Sanity
-export const postsQuery = `*[_type == "post"] | order(publishedAt desc) {
+export const postsQuery = `*[_type == "post" && !(_id in path("drafts.**")) && defined(publishedAt)] | order(publishedAt desc) {
   _id,
   title,
   slug,
