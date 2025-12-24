@@ -85,17 +85,17 @@ export default async function BlogPost({ params }: { params: { slug: string } })
               </Badge>
             ))}
           </div>
-          <div className="flex items-center justify-center gap-4 mb-4">
+          <div className="flex items-center justify-center gap-8 mb-4">
             <img 
               src="/images/about/logo.jpeg" 
               alt="Time2Wander Logo" 
-              className="h-16 w-auto"
+              className="h-24 w-auto"
             />
             <h1 className="text-4xl md:text-5xl font-bold">{post.title}</h1>
             <img 
               src="/images/about/logo.jpeg" 
               alt="Time2Wander Logo" 
-              className="h-16 w-auto"
+              className="h-24 w-auto"
             />
           </div>
           <div className="flex items-center gap-4 text-muted-foreground">

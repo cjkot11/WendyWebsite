@@ -15,17 +15,17 @@ export default function MeetWendy() {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="flex items-center justify-center gap-4 mb-4">
+          <div className="flex items-center justify-center gap-8 mb-4">
             <img 
               src="/images/about/logo.jpeg" 
               alt="Time2Wander Logo" 
-              className="h-16 w-auto"
+              className="h-24 w-auto"
             />
             <h1 className="text-5xl font-bold">Meet Wendy</h1>
             <img 
               src="/images/about/logo.jpeg" 
               alt="Time2Wander Logo" 
-              className="h-16 w-auto"
+              className="h-24 w-auto"
             />
           </div>
           <p className="text-xl text-muted-foreground">

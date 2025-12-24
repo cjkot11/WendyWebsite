@@ -1,17 +1,17 @@
 export default function Privacy() {
   return (
     <div className="container mx-auto px-4 py-20 max-w-4xl">
-      <div className="flex items-center justify-center gap-4 mb-8">
+      <div className="flex items-center justify-center gap-8 mb-8">
         <img 
           src="/images/about/logo.jpeg" 
           alt="Time2Wander Logo" 
-          className="h-16 w-auto"
+          className="h-24 w-auto"
         />
         <h1 className="text-5xl font-bold">Privacy Policy</h1>
         <img 
           src="/images/about/logo.jpeg" 
           alt="Time2Wander Logo" 
-          className="h-16 w-auto"
+          className="h-24 w-auto"
         />
       </div>
       <div className="prose max-w-none">
