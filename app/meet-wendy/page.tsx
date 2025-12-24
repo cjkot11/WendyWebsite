@@ -1,6 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function MeetWendy() {
@@ -10,11 +9,9 @@ export default function MeetWendy() {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <div className="w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden border-4 border-blue-200">
-            <Image 
+            <img 
               src="/images/about/mom_profile.jpg" 
               alt="Wendy" 
-              width={192} 
-              height={192}
               className="w-full h-full object-cover"
             />
           </div>
