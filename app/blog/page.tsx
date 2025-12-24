@@ -38,7 +38,19 @@ export default async function Blog() {
     <div className="container mx-auto px-4 py-20">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold mb-4">Travel Blog</h1>
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <img 
+              src="/images/about/logo.jpeg" 
+              alt="Time2Wander Logo" 
+              className="h-16 w-auto"
+            />
+            <h1 className="text-5xl font-bold">Travel Blog</h1>
+            <img 
+              src="/images/about/logo.jpeg" 
+              alt="Time2Wander Logo" 
+              className="h-16 w-auto"
+            />
+          </div>
           <p className="text-xl text-muted-foreground">
             Travel tips, destination guides, and travel insights from Wendy.
           </p>

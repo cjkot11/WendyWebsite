@@ -10,7 +10,19 @@ export default function ThankYou() {
         <Card>
           <CardContent className="pt-12 pb-12">
             <CheckCircle className="h-20 w-20 mx-auto text-green-500 mb-6" />
-            <h1 className="text-4xl font-bold mb-4">Thank You!</h1>
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <img 
+                src="/images/about/logo.jpeg" 
+                alt="Time2Wander Logo" 
+                className="h-16 w-auto"
+              />
+              <h1 className="text-4xl font-bold">Thank You!</h1>
+              <img 
+                src="/images/about/logo.jpeg" 
+                alt="Time2Wander Logo" 
+                className="h-16 w-auto"
+              />
+            </div>
             <p className="text-xl text-muted-foreground mb-8">
               We've received your inquiry and will get back to you within 24 hours.
             </p>

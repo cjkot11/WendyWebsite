@@ -66,7 +66,19 @@ export default function CustomTrips() {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold mb-4">Custom Trip Planning</h1>
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <img 
+              src="/images/about/logo.jpeg" 
+              alt="Time2Wander Logo" 
+              className="h-16 w-auto"
+            />
+            <h1 className="text-5xl font-bold">Custom Trip Planning</h1>
+            <img 
+              src="/images/about/logo.jpeg" 
+              alt="Time2Wander Logo" 
+              className="h-16 w-auto"
+            />
+          </div>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Let us create a personalized itinerary tailored to your dreams, interests, and budget
           </p>

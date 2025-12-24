@@ -6,12 +6,8 @@ export function Navbar() {
     <nav className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center">
-            <img 
-              src="/images/about/logo.jpeg" 
-              alt="Time2Wander Logo" 
-              className="h-10 w-auto"
-            />
+          <Link href="/" className="text-2xl font-bold text-primary">
+            Time2Wander
           </Link>
           
           <div className="hidden md:flex items-center space-x-6">
