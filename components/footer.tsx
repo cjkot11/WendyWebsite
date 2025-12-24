@@ -8,7 +8,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* About */}
           <div>
-            <h3 className="font-bold text-lg mb-4">Wendy's Travel</h3>
+            <h3 className="font-bold text-lg mb-4">Time2Wander</h3>
             <p className="text-sm text-muted-foreground">
               Your trusted travel planning partner for custom trips and cruise expertise.
             </p>
@@ -47,11 +47,11 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-2 text-muted-foreground">
                 <Phone className="h-4 w-4" />
-                <span>(555) 123-4567</span>
+                <span>510-798-3013</span>
               </li>
               <li className="flex items-center gap-2 text-muted-foreground">
                 <Mail className="h-4 w-4" />
-                <span>wendy@wendytravel.com</span>
+                <span>wakotsen@aol.com</span>
               </li>
               <li className="flex items-start gap-2 text-muted-foreground">
                 <Clock className="h-4 w-4 mt-0.5" />
@@ -98,7 +98,7 @@ export function Footer() {
         </div>
         
         <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Wendy's Travel Agency. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Time2Wander. All rights reserved.</p>
         </div>
       </div>
     </footer>

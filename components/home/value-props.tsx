@@ -23,7 +23,7 @@ export function ValueProps() {
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12">Why Choose Wendy's Travel?</h2>
+        <h2 className="text-4xl font-bold text-center mb-12">Why Choose Time2Wander?</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {props.map((prop, index) => (
             <Card key={index} className="text-center">

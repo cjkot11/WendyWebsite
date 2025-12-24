@@ -42,8 +42,8 @@ export async function POST(request: Request) {
       try {
         // Send notification to admin
         await resend.emails.send({
-          from: "Wendy's Travel <onboarding@resend.dev>",
-          to: process.env.ADMIN_EMAIL || "wendy@wendytravel.com",
+          from: "Time2Wander <onboarding@resend.dev>",
+          to: process.env.ADMIN_EMAIL || "wakotsen@aol.com",
           subject: `New Lead from ${name}`,
           html: `
             <h2>New Lead Submitted</h2>
@@ -57,9 +57,9 @@ export async function POST(request: Request) {
 
         // Send confirmation to client
         await resend.emails.send({
-          from: "Wendy's Travel <onboarding@resend.dev>",
+          from: "Time2Wander <onboarding@resend.dev>",
           to: email,
-          subject: "Thank you for contacting Wendy's Travel!",
+          subject: "Thank you for contacting Time2Wander!",
           html: `
             <h2>Thank you, ${name}!</h2>
             <p>We've received your inquiry and will get back to you within 24 hours.</p>

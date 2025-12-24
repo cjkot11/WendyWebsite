@@ -9,7 +9,7 @@ export default function Privacy() {
         <h2 className="text-2xl font-semibold mt-8 mb-4">How We Use Your Information</h2>
         <p>We use the information we collect to provide, maintain, and improve our services.</p>
         <h2 className="text-2xl font-semibold mt-8 mb-4">Contact Us</h2>
-        <p>If you have questions about this Privacy Policy, please contact us at wendy@wendytravel.com</p>
+        <p>If you have questions about this Privacy Policy, please contact us at wakotsen@aol.com</p>
       </div>
     </div>
   );

@@ -80,11 +80,11 @@ export default function StartPlanning() {
               <CardContent className="space-y-4">
                 <div>
                   <p className="font-semibold mb-2">Phone</p>
-                  <p className="text-muted-foreground">(555) 123-4567</p>
+                  <p className="text-muted-foreground">510-798-3013</p>
                 </div>
                 <div>
                   <p className="font-semibold mb-2">Email</p>
-                  <p className="text-muted-foreground">wendy@wendytravel.com</p>
+                  <p className="text-muted-foreground">wakotsen@aol.com</p>
                 </div>
                 <div>
                   <p className="font-semibold mb-2">Office Hours</p>

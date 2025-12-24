@@ -7,8 +7,8 @@ import { Footer } from "@/components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Wendy's Travel Agency | Custom Travel Planning",
-  description: "Plan your dream vacation with expert travel planning from Wendy's Travel Agency. Custom trips, cruise expertise, and concierge support.",
+  title: "Time2Wander | Custom Travel Planning",
+  description: "Plan your dream vacation with expert travel planning from Time2Wander. Custom trips, cruise expertise, and concierge support.",
 };
 
 export default function RootLayout({
