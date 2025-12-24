@@ -12,6 +12,13 @@ export default function Home() {
       <Destinations />
       <Testimonials />
       <LeadForm />
+      <div className="bg-muted/30 py-8">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-sm text-muted-foreground italic">
+            All photos seen were taken on Time2Wander trips!
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

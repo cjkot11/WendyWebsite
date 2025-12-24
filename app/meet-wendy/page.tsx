@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function MeetWendy() {
@@ -8,8 +9,14 @@ export default function MeetWendy() {
       <div className="max-w-4xl mx-auto">
         {/* Hero Section */}
         <div className="text-center mb-16">
-          <div className="w-48 h-48 mx-auto mb-8 rounded-full bg-gradient-to-br from-blue-200 to-teal-300 flex items-center justify-center text-6xl">
-            👋
+          <div className="w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden border-4 border-blue-200">
+            <Image 
+              src="/images/about/mom_profile.jpg" 
+              alt="Wendy" 
+              width={192} 
+              height={192}
+              className="w-full h-full object-cover"
+            />
           </div>
           <h1 className="text-5xl font-bold mb-4">Meet Wendy</h1>
           <p className="text-xl text-muted-foreground">
@@ -23,8 +30,8 @@ export default function MeetWendy() {
             <h2 className="text-3xl font-semibold mb-6">About Wendy</h2>
             <div className="prose max-w-none">
               <p className="text-lg mb-4">
-                Welcome! I'm Wendy, and I'm passionate about creating unforgettable travel experiences 
-                for my clients. With years of experience in the travel industry, I specialize in crafting 
+                Hi! I'm Wendy, and I'm passionate about creating unforgettable travel experiences 
+                for my clients. With a lifetime of experience traveling to approximately 50 countries, I specialize in crafting 
                 personalized itineraries that match your unique interests, budget, and travel style.
               </p>
               <p className="text-lg mb-4">
@@ -47,10 +54,9 @@ export default function MeetWendy() {
               <h3 className="text-xl font-semibold mb-4">Credentials & Certifications</h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li>✓ Certified Travel Consultant</li>
-                <li>✓ Cruise Line Certified Specialist</li>
+                <li>✓ Cruise Line Specialist</li>
                 <li>✓ Adventure Travel Expert</li>
                 <li>✓ Luxury Travel Consultant</li>
-                <li>✓ Destination Wedding Specialist</li>
               </ul>
             </CardContent>
           </Card>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 export function Navbar() {
@@ -6,8 +7,14 @@ export function Navbar() {
     <nav className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="text-2xl font-bold text-primary">
-            Time2Wander
+          <Link href="/" className="flex items-center">
+            <Image 
+              src="/images/about/logo.jpeg" 
+              alt="Time2Wander Logo" 
+              width={120} 
+              height={40}
+              className="h-10 w-auto"
+            />
           </Link>
           
           <div className="hidden md:flex items-center space-x-6">
