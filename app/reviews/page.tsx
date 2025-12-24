@@ -74,17 +74,17 @@ export default function Reviews() {
     <div className="container mx-auto px-4 py-20">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-8 mb-4">
+          <div className="flex items-center justify-center gap-16 mb-4">
             <img 
               src="/images/about/logo.jpeg" 
               alt="Time2Wander Logo" 
-              className="h-24 w-auto"
+              className="h-32 w-auto"
             />
             <h1 className="text-5xl font-bold">Client Reviews</h1>
             <img 
               src="/images/about/logo.jpeg" 
               alt="Time2Wander Logo" 
-              className="h-24 w-auto"
+              className="h-32 w-auto"
             />
           </div>
           <p className="text-xl text-muted-foreground">See what our clients have to say</p>

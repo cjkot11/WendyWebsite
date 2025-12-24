@@ -1,17 +1,17 @@
 export default function Terms() {
   return (
     <div className="container mx-auto px-4 py-20 max-w-4xl">
-      <div className="flex items-center justify-center gap-8 mb-8">
+      <div className="flex items-center justify-center gap-16 mb-8">
         <img 
           src="/images/about/logo.jpeg" 
           alt="Time2Wander Logo" 
-          className="h-24 w-auto"
+          className="h-32 w-auto"
         />
         <h1 className="text-5xl font-bold">Terms of Service</h1>
         <img 
           src="/images/about/logo.jpeg" 
           alt="Time2Wander Logo" 
-          className="h-24 w-auto"
+          className="h-32 w-auto"
         />
       </div>
       <div className="prose max-w-none">
