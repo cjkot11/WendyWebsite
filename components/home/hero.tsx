@@ -33,20 +33,21 @@ export function Hero() {
 
   return (
     <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
+      {/* Fallback gradient if images don't load - behind everything */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-teal-600 z-0" />
       {/* Background images with fade transition */}
       {backgroundImages.map((image, index) => (
         <div
           key={image}
-          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 z-10 ${
             index === currentImage ? 'opacity-100' : 'opacity-0'
           }`}
           style={{ backgroundImage: `url(${image})` }}
         />
       ))}
-      {/* Fallback gradient if images don't load */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-teal-600" />
-      <div className="absolute inset-0 bg-black/40"></div>
-      <div className="relative z-10 text-center px-4 max-w-3xl">
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-black/40 z-20" />
+      <div className="relative z-30 text-center px-4 max-w-3xl">
         <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white drop-shadow-lg">
           Plan Your Dream Vacation
         </h1>
